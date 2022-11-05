@@ -7,6 +7,15 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="pushNotificationTitle">SBB Inclusive</string>
+    <string name="pushNotificationContent">Message content</string>
+    <string name="channel_name">channel_name</string>
+    <string name="channel_description">channel_description</string>
+
+
+
+
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
