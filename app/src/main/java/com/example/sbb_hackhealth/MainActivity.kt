@@ -4,27 +4,36 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
-import android.provider.Settings.Global.getString
-import com.google.android.material.snackbar.Snackbar
+import android.os.VibrationEffect
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import androidx.core.app.NotificationManagerCompat
 import com.example.sbb_hackhealth.databinding.ActivityMainBinding
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.databind.ObjectMapper
+import java.io.InputStream
+import java.lang.reflect.Array.get
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private val CHANNEL_ID = "important"
+
+    private var storicpriority = 1
+    private val travelId = 1
+    private val emergencyId = 2
+    private val requestId = 3
+    private val journeyId = 4
+    private val generalId = 5
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +49,44 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+        val data : List<Announcement> = import();
+
+
+        for(announcement in data){
+            val priority = announcement.priority
+
+            val classifier = when(priority) {
+                1 -> "Travel Issue"
+                2 -> "Emergency"
+                3 -> "Request"
+                4 -> "Journey Information"
+                else -> "General Information"
+            }
+            val foto = when(priority) {
+                1 -> R.drawable.emergency
+                2 -> R.drawable.emergency
+                3 -> R.drawable.emergency
+                4 -> R.mipmap.travelinfo
+                else -> R.drawable.emergency
+            }
+            val id = when(priority) {
+                1 -> travelId
+                2 -> emergencyId
+                3 -> requestId
+                4 -> journeyId
+                else -> generalId
+            }
+
+            val message = announcement.payload!!.textEn
+            Thread.sleep(5000)
+
+            createNotificationChannel(context = navController.context, id = id, pushNotificationTitle = classifier, pushNotificationContent = message, icon = foto, prior=priority)
+
+
+        }
+
+
+/*
         val name = getString(R.string.channel_name)
         val descriptionText = getString(R.string.channel_description)
         val importance = NotificationManager.IMPORTANCE_DEFAULT
@@ -59,11 +106,20 @@ class MainActivity : AppCompatActivity() {
 //                .addAction(action)
                 .build()
 
+
+
 // Issue the notification.
             with(NotificationManagerCompat.from(this)) {
                 notificationManager.notify(i++, newMessageNotification)
             }
-        }
+        }*/
+
+
+    }
+
+    private fun import(): List<Announcement> {
+        val data: InputStream  = applicationContext.assets.open("category_data")
+        return ObjectMapper().readValue(data, object : TypeReference<List<Announcement>>() {})
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -88,10 +144,26 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 
-    private fun createNotificationChannel(str: channel_names, ){
-        val name = getString(channel_names)
+    private fun createNotificationChannel(
+        context: Context,
+        id: Int,
+        pushNotificationTitle: String,
+        pushNotificationContent: String,
+        icon: Int,
+        prior: Int
+    ){
+        val name = getString(R.string.channel_name)
+        //var importance = NotificationManager.IMPORTANCE_DEFAULT
         val descriptionText = getString(R.string.channel_description)
-        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val importance = when(prior) {
+            1 -> NotificationManager.IMPORTANCE_MAX
+            2 -> NotificationManager.IMPORTANCE_DEFAULT
+            3 -> NotificationManager.IMPORTANCE_DEFAULT
+            4 ->NotificationManager.IMPORTANCE_DEFAULT
+            else ->NotificationManager.IMPORTANCE_LOW
+        }
+
+
         val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
             description = descriptionText
         }
@@ -100,6 +172,24 @@ class MainActivity : AppCompatActivity() {
         notificationManager.createNotificationChannel(channel)
 
 
+        val newMessageNotification = Notification.Builder(context, "important")
+            .setSmallIcon(icon)
+            .setContentTitle(pushNotificationTitle)
+            .setContentText(pushNotificationContent)
+
+          //  .addAction(VibrationEffect.EFFECT_CLICK)
+            .build()
+
+// Issue the notification.
+            with(NotificationManagerCompat.from(this)) {
+                notificationManager.notify(id, newMessageNotification)
+            }
+
+
+
 
     }
 }
+
+//private fun Notification.Builder.addAction(effectClick: Int): Notification.Builder {
+//}

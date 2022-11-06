@@ -1,0 +1,28 @@
+[{
+	"priority": 1,
+	"payload": {
+		"textDe": "Geschätzte Fahrgäste.\nDieser Zug verkehrt nur bis Lancy-Pont-Rouge.\nGrund dafür ist ein Zug, der die Strecke blockiert.\nReisende nach Genève-Eaux-Vives, Annemasse benützen die S L4 nach Annemasse, mit Abfahrt um 9:22, ab Gleis 2.\nNächster Halt: Lancy-Pont-Rouge.\nWir bitten alle Reisenden auszusteigen.\nWir bedauern die Unannehmlichkeiten und bitten Sie um Entschuldigung.",
+		"textFr": "Chers voyageurs.\nCe train circule seulement jusqu'à Lancy-Pont-Rouge.\nCette situation est due à un train bloquant la ligne.\nLes voyageurs pour Genève-Eaux-Vives, Annemasse utilisent la S L4 pour Annemasse, départ à 9:22, sur voie 2.\nProchain arrêt: Lancy-Pont-Rouge.\nNous vous prions de bien vouloir descendre.\nNous regrettons ces désagréments et nous vous prions de nous en excuser.",
+		"textIt": "Gentili viaggiatori.\nQuesto treno circola solo fino a Lancy-Pont-Rouge.\nLa causa è un treno che blocca la tratta.\nI viaggiatori per Genève-Eaux-Vives, Annemasse utilizzano la S L4 per Annemasse, partenza alle ore 9:22, dal binario 2.\nProssima fermata: Lancy-Pont-Rouge.\nTutti viaggatori sono pregati di scendere dal treno.\nCi dispiace per l’inconveniente e vi preghiamo di scusarci.",
+		"textEn": "Ladies and gentlemen.\nThis train only operates as far as Lancy-Pont-Rouge.\nThis is due to another train blocking the track.\nPassengers for Genève-Eaux-Vives, Annemasse take the S L4 to Annemasse, departure at 9:22, from platform 2.\nNext stop: Lancy-Pont-Rouge.\nAll passengers are kindly requested to leave the train.\nWe apologize for any inconvenience and kindly ask you for your understanding."
+	}
+},
+{
+	"priority": 2,
+	"payload": {
+		"textDe": "Geschätzte Fahrgäste.\nDieser Zug verkehrt nur bis Rotkreuz.\nGrund dafür ist eine technische Störung am Zug.\nReisende nach Hünenberg Zythus, Cham, Cham Alpenblick, Zug benützen die S 1 nach Baar, mit Abfahrt um 8:09, ab Gleis 3.\nReisende nach Hünenberg Chämleten benützen die S 1 nach Baar, mit Abfahrt um 8:23, ab Gleis 2.\nNächster Halt: Rotkreuz.\nWir bitten alle Reisenden auszusteigen.\nWir bedauern die Unannehmlichkeiten und bitten Sie um Entschuldigung.",
+		"textFr": "Chers voyageurs.\nCe train circule seulement jusqu'à Rotkreuz.\nCette situation est due à un dérangement technique au train.\nLes voyageurs pour Hünenberg Zythus, Cham, Cham Alpenblick, Zug utilisent la S 1 pour Baar, départ à 8:09, sur voie 3.\nLes voyageurs pour Hünenberg Chämleten utilisent la S 1 pour Baar, départ à 8:23, sur voie 2.\nProchain arrêt: Rotkreuz.\nNous vous prions de bien vouloir descendre.\nNous regrettons ces désagréments et nous vous prions de nous en excuser.",
+		"textIt": "Gentili viaggiatori.\nQuesto treno circola solo fino a Rotkreuz.\nLa causa è un guasto tecnico al treno.\nI viaggiatori per Hünenberg Zythus, Cham, Cham Alpenblick, Zug utilizzano la S 1 per Baar, partenza alle ore 8:09, dal binario 3.\nI viaggiatori per Hünenberg Chämleten utilizzano la S 1 per Baar, partenza alle ore 8:23, dal binario 2.\nProssima fermata: Rotkreuz.\nTutti viaggatori sono pregati di scendere dal treno.\nCi dispiace per l’inconveniente e vi preghiamo di scusarci.",
+		"textEn": "Ladies and gentlemen.\nThis train only operates as far as Rotkreuz.\nThis is due to a technical difficulty with the carriage.\nPassengers for Hünenberg Zythus, Cham, Cham Alpenblick, Zug take the S 1 to Baar, departure at 8:09, from platform 3.\nPassengers for Hünenberg Chämleten take the S 1 to Baar, departure at 8:23, from platform 2.\nNext stop: Rotkreuz.\nAll passengers are kindly requested to leave the train.\nWe apologize for any inconvenience and kindly ask you for your understanding."
+
+	}
+},
+{
+	"priority": 3,
+	"payload": {
+		"textDe": "Geschätzte Fahrgäste.\nDieser Zug verkehrt heute ab ... ausnahmsweise ohne Halt bis ... (und hält nicht in ... ).\nReisende nach Clarens benützen ab Montreux die S 2 nach Vallorbe, mit Abfahrt um 7:31, ab Gleis 1.\nNächster Halt: Montreux.\nWir bedauern die Unannehmlichkeiten und bitten Sie um Verständnis.",
+		"textFr": "Chers voyageurs.\nCe train circule aujourd’hui exceptionnellement de ... sans arrêt jusqu' à ... (et ne s'arrête pas à ... ).\nLes voyageurs pour Clarens utilisent dès Montreux la S 2 pour Vallorbe, départ à 7:31, sur voie 1.\nProchain arrêt: Montreux.\nNous regrettons ces désagréments et nous vous remercions pour votre compréhension.",
+		"textIt": "Gentili viaggiatori.\nQuesto treno circolerà oggi eccezionalmente senza fermata da ... fino a ... (e non si ferma a ...).\nI viaggiatori per Clarens utilizzano da Montreux la S 2 per Vallorbe, partenza alle ore 7:31, dal binario 1.\nProssima fermata: Montreux.\nCi dispiace per l’inconveniente e vi ringraziamo per la vostra comprensione.",
+		"textEn": "Ladies and gentlemen.\nThis train will run nonstop from ... to ... (and will not stop in ... ).\nPassengers for Clarens take from Montreux the S 2 to Vallorbe, departure at 7:31, from platform 1.\nNext stop: Montreux.\nWe regret any inconvenience and thank you for your understanding."
+	}
+}]
